@@ -28,44 +28,56 @@ body{
 .container{width:min(1240px,92%);margin:auto}
 
 /* HERO PRINCIPAL */
-.hero-image{width:100%;margin:0;padding:0;line-height:0;overflow:hidden;background:#06111f;}
-.hero-image img{display:block;width:100%;height:auto;max-width:none;margin:0;padding:0;object-fit:contain;object-position:center top;}
-@media(max-width:700px){.hero-image{overflow-x:hidden}.hero-image img{width:100%;height:auto}}
-
-/* BOTÓN REAL DE DESCARGA */
-.download-area{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:28px 20px 34px;
+.hero-image{
+  width:100%;
+  margin:0;
+  padding:0;
+  line-height:0;
+  overflow:hidden;
   background:#06111f;
-  text-align:center;
+  position:relative;
 }
+.hero-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+  margin:0;
+  padding:0;
+}
+
+/* Botón funcional invisible colocado EXACTAMENTE encima del botón que aparece en la imagen.
+   La imagen mide 1536x1024 y el botón está aproximadamente en:
+   x=140..696 / y=775..850. Se usan porcentajes para que funcione al escalar. */
 .download-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:24px;
-  min-width:430px;
-  padding:18px 34px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#f8dc91,#e9b94f);
-  color:#101820;
+  position:absolute;
+  left:9.1%;
+  top:75.7%;
+  width:36.2%;
+  height:7.4%;
+  display:block;
+  z-index:5;
+  background:transparent;
+  border:0;
+  border-radius:40px;
   text-decoration:none;
-  font-size:24px;
-  font-weight:800;
-  box-shadow:0 14px 35px rgba(233,185,79,.25);
-  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;
 }
 .download-button:hover{
-  transform:translateY(-3px);
-  box-shadow:0 20px 45px rgba(233,185,79,.38);
+  background:rgba(255,255,255,.02);
 }
-.download-icon,.download-arrow{font-size:28px;line-height:1}
-.download-area p{margin:10px 0 0;color:#b9c5d2;font-size:14px}
-@media(max-width:600px){
-  .download-button{min-width:0;width:100%;max-width:430px;font-size:20px;padding:16px 22px;gap:16px}
+.download-button span{
+  display:none;
+}
+
+@media(max-width:700px){
+  .hero-image{overflow:hidden;}
+  .download-button{
+    left:9.1%;
+    top:75.7%;
+    width:36.2%;
+    height:7.4%;
+  }
 }
 
 /* FEATURES */
@@ -135,14 +147,16 @@ footer{
   <section class="hero-image" id="inicio">
     <img src="sofiia-hero-2.png" alt="Sofiia — Sistema de Optimización Financiera Impulsada por Inteligencia Artificial">
 
-    <div class="download-area" id="descarga">
-      <a class="download-button" href="https://mega.nz/file/NEliXRBK#1n1Sic8_3MePXAn5Hp7sk9QNBLS_hZ51GHRqfIxJt2c" target="_blank" rel="noopener noreferrer">
-        <span class="download-icon">↓</span>
-        <span>Descargar Sofiia</span>
-        <span class="download-arrow">→</span>
-      </a>
-      <p>Descarga Sofiia y comienza tus análisis financieros.</p>
-    </div>
+    <!-- El enlace es transparente: el botón visible pertenece a la imagen y este enlace lo hace funcional. -->
+    <a
+      class="download-button"
+      id="descarga"
+      href="https://mega.nz/file/NEliXRBK#1n1Sic8_3MePXAn5Hp7sk9QNBLS_hZ51GHRqfIxJt2c"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Descargar Sofiia"
+      title="Descargar Sofiia"
+    ></a>
   </section>
 
 <section class="features" id="ventajas">

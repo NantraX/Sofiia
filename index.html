@@ -32,6 +32,42 @@ body{
 .hero-image img{display:block;width:100%;height:auto;max-width:none;margin:0;padding:0;object-fit:contain;object-position:center top;}
 @media(max-width:700px){.hero-image{overflow-x:hidden}.hero-image img{width:100%;height:auto}}
 
+/* BOTÓN REAL DE DESCARGA */
+.download-area{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px 20px 34px;
+  background:#06111f;
+  text-align:center;
+}
+.download-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  min-width:430px;
+  padding:18px 34px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#f8dc91,#e9b94f);
+  color:#101820;
+  text-decoration:none;
+  font-size:24px;
+  font-weight:800;
+  box-shadow:0 14px 35px rgba(233,185,79,.25);
+  transition:transform .2s,box-shadow .2s;
+}
+.download-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 45px rgba(233,185,79,.38);
+}
+.download-icon,.download-arrow{font-size:28px;line-height:1}
+.download-area p{margin:10px 0 0;color:#b9c5d2;font-size:14px}
+@media(max-width:600px){
+  .download-button{min-width:0;width:100%;max-width:430px;font-size:20px;padding:16px 22px;gap:16px}
+}
+
 /* FEATURES */
 .features{
   padding:85px 0 100px;
@@ -98,6 +134,15 @@ footer{
   <!-- HERO PRINCIPAL: imagen completa, sin recortes -->
   <section class="hero-image" id="inicio">
     <img src="sofiia-hero-2.png" alt="Sofiia — Sistema de Optimización Financiera Impulsada por Inteligencia Artificial">
+
+    <div class="download-area" id="descarga">
+      <a class="download-button" href="https://mega.nz/file/NEliXRBK#1n1Sic8_3MePXAn5Hp7sk9QNBLS_hZ51GHRqfIxJt2c" target="_blank" rel="noopener noreferrer">
+        <span class="download-icon">↓</span>
+        <span>Descargar Sofiia</span>
+        <span class="download-arrow">→</span>
+      </a>
+      <p>Descarga Sofiia y comienza tus análisis financieros.</p>
+    </div>
   </section>
 
 <section class="features" id="ventajas">

@@ -27,176 +27,10 @@ body{
 }
 .container{width:min(1240px,92%);margin:auto}
 
-/* NAV */
-header{
-  height:76px;
-  border-bottom:1px solid var(--line);
-  background:rgba(4,13,24,.72);
-  backdrop-filter:blur(14px);
-  position:sticky;
-  top:0;
-  z-index:20;
-}
-.nav{
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo{
-  color:var(--gold2);
-  font-size:30px;
-  font-weight:800;
-  letter-spacing:-1.5px;
-}
-nav a{
-  color:#e6edf5;
-  text-decoration:none;
-  margin-left:32px;
-  font-size:14px;
-  transition:.2s;
-}
-nav a:hover{color:var(--gold2)}
-
-/* HERO */
-.hero{
-  min-height:calc(100vh - 76px);
-  display:grid;
-  grid-template-columns:1.02fr .98fr;
-  align-items:center;
-  gap:35px;
-  padding:45px 0 65px;
-}
-.kicker{
-  color:var(--gold2);
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:15px;
-}
-h1{
-  font-size:clamp(55px,7vw,96px);
-  line-height:.88;
-  letter-spacing:-5px;
-  margin:0 0 18px;
-}
-h1 span{
-  background:linear-gradient(100deg,#fff,var(--gold2));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.subtitle{
-  font-size:clamp(18px,2vw,24px);
-  line-height:1.3;
-  margin-bottom:25px;
-}
-.definition{
-  display:flex;
-  gap:18px;
-  border:1px solid rgba(233,185,79,.3);
-  background:rgba(255,255,255,.035);
-  border-radius:18px;
-  padding:20px 22px;
-  max-width:720px;
-}
-.definition-icon{
-  color:var(--gold2);
-  font-size:34px;
-  line-height:1;
-}
-.definition strong{
-  display:block;
-  font-size:19px;
-  margin-bottom:7px;
-  color:#fff;
-}
-.definition p{
-  margin:0;
-  color:#cbd5df;
-  line-height:1.55;
-}
-.cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-  margin-top:25px;
-  min-width:350px;
-  padding:18px 28px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-  color:#101820;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:800;
-  box-shadow:0 16px 40px rgba(233,185,79,.25);
-  transition:.2s;
-}
-.cta:hover{
-  transform:translateY(-3px);
-  box-shadow:0 22px 50px rgba(233,185,79,.35);
-}
-.trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  margin-top:20px;
-  color:var(--muted);
-  font-size:13px;
-}
-.trust span{display:flex;align-items:center;gap:7px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
-
-/* VISUAL */
-.visual{
-  min-height:680px;
-  position:relative;
-  display:flex;
-  align-items:center;
-}
-.visual-card{
-  width:100%;
-  height:680px;
-  overflow:hidden;
-  border-radius:30px;
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:0 35px 100px rgba(0,0,0,.5);
-  position:relative;
-  background:#101820;
-}
-.visual-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-}
-.visual-card:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(6,17,31,.08),transparent 55%);
-  pointer-events:none;
-}
-.floating{
-  position:absolute;
-  left:-25px;
-  bottom:35px;
-  z-index:3;
-  padding:15px 19px;
-  border-radius:15px;
-  background:rgba(5,15,27,.92);
-  border:1px solid rgba(233,185,79,.45);
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
-}
-.floating b{
-  display:block;
-  color:var(--gold2);
-  font-size:19px;
-}
-.floating small{color:#c8d1db}
+/* HERO PRINCIPAL */
+.hero-image{width:100%;margin:0;padding:0;line-height:0;overflow:hidden;background:#06111f;}
+.hero-image img{display:block;width:100%;height:auto;max-width:none;margin:0;padding:0;object-fit:contain;object-position:center top;}
+@media(max-width:700px){.hero-image{overflow-x:hidden}.hero-image img{width:100%;height:auto}}
 
 /* FEATURES */
 .features{
@@ -252,24 +86,7 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:1050px){
-  .hero{grid-template-columns:1fr}
-  .visual{min-height:560px}
-  .visual-card{height:560px}
-  .cards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:700px){
-  header{height:68px}
-  nav{display:none}
-  .hero{padding-top:35px}
-  h1{letter-spacing:-3px}
-  .visual{min-height:470px}
-  .visual-card{height:470px;border-radius:22px}
-  .floating{left:12px;bottom:18px}
-  .cta{min-width:0;width:100%}
-}
-@media(max-width:500px){
-  .cards{grid-template-columns:1fr}
+
   .definition{padding:17px}
   .subtitle{font-size:18px}
 }
@@ -278,75 +95,10 @@ footer{
 
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="logo">Sofiia</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#que-es">¿Qué es Sofiia?</a>
-      <a href="#ventajas">Ventajas</a>
-      <a href="#funcionalidades">Funcionalidades</a>
-      <a href="#descarga">Descarga</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero container" id="inicio">
-
-  <div>
-    <div class="kicker">Financiación inteligente · Inteligencia Artificial</div>
-
-    <h1><span>Sofiia</span><br>decide mejor.</h1>
-
-    <div class="subtitle">
-      <strong>Sistema de Optimización Financiera Impulsada por Inteligencia Artificial.</strong>
-    </div>
-
-    <div class="definition" id="que-es">
-      <div class="definition-icon">↗</div>
-      <div>
-        <strong>Sofiia te ayuda a optimizar el mejor tipo de interés.</strong>
-        <p>
-          ¿Qué es optimizar un tipo de interés?
-          Es encontrar el tipo de interés más compensado,
-          donde la relación <b>cuota-beneficio</b> sea la más equilibrada.
-        </p>
-      </div>
-    </div>
-
-    <a
-      class="cta"
-      id="descarga"
-      href="https://mega.nz/file/NEliXRBK#1n1Sic8_3MePXAn5Hp7sk9QNBLS_hZ51GHRqfIxJt2c"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <span style="font-size:24px">↓</span>
-      Descargar Sofiia
-      <span style="font-size:24px">→</span>
-    </a>
-
-    <div class="trust">
-      <span><i class="dot"></i> Inteligencia artificial</span>
-      <span><i class="dot"></i> Máxima rentabilidad</span>
-      <span><i class="dot"></i> Resultados en segundos</span>
-      <span><i class="dot"></i> Datos seguros</span>
-    </div>
-  </div>
-
-  <div class="visual">
-    <div class="visual-card">
-      <img src="sofiia-hero-2.png" alt="Sofiia — Sistema de Optimización Financiera Impulsada por Inteligencia Artificial">
-      <div class="floating">
-        <b>Optimización financiera</b>
-        <small>Equilibrio entre cuota y beneficio</small>
-      </div>
-    </div>
-  </div>
-
-</section>
+  <!-- HERO PRINCIPAL: imagen completa, sin recortes -->
+  <section class="hero-image" id="inicio">
+    <img src="sofiia-hero-2.png" alt="Sofiia — Sistema de Optimización Financiera Impulsada por Inteligencia Artificial">
+  </section>
 
 <section class="features" id="ventajas">
   <div class="container">
